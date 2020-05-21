@@ -1,0 +1,81 @@
+saloon = []
+people_car = []
+mini = []
+count = 0
+
+total_seats = 0
+total_cost = 0
+
+mini_distance = 0
+sln_distance = 0
+ppl_distance = 0
+
+def check(distance):
+    try:
+        distance = float(distance)
+    except ValueError:
+        print("Enter a number")
+        return False
+
+while True:
+    print("[1] Add to List (" + repr(count) + " entered)")
+    print("[2] View List")
+    print("[3] View Information and Costs")
+    print("[4] Exit")
+    menu = input("Enter command: ")
+
+    if menu == "1":
+        clarify = input("Add to list? (yes/no) ")
+
+        if clarify == "yes" and count < 25:
+            while True:
+
+                if count > 24:
+                    print("You have reached the maximum amount of list inputs!")
+                    break
+
+                seats = input("How many riders? (type exit to exit) ")
+
+                try:
+                    seats = int(seats)
+                except ValueError:
+                    print("Please enter a number \n=======================================")
+                    pass
+                    break
+
+                if int(seats) > 0 and int(seats) < 5:
+                    car_type = input("You will be taking the saloon car? (yes/no) ")
+                    if car_type == "yes":
+                        distance = input("How far was the trip? ")
+                        if check(distance) == False:
+                            break
+
+                        if distance > 0 and distance < 51 and sln_distance < 351:
+                            count += 1
+                            len_sum = float(2.50) + distance
+                            total_sum = len_sum * 1.06
+                            print("Price is: RM" + repr(round(total_sum, 2)) + "\n=======================================")
+                            saloon.append("Riders: " + repr(seats) + "Revenue: RM" + repr(round(total_sum, 2)) + " | ")
+                            total_seats += seats
+                            total_cost += round(total_sum, 2)
+                            sln_distance += distance
+
+                        elif sln_distance > 350:
+                            print("This car has reached it's limit")
+
+                        elif distance < 1 or distance > 50:
+                            print("Please enter a valid distance between 1 and 50")
+
+                        else:
+                            print("Have you tried digits?")
+
+                    elif car_type == "no":
+                        print("Command cancelled")
+
+                    else:
+                        print("Please redo")
+
+
+                if int(seats) > 4 and int(seats) < 9:
+                    car_type = input("You will be taking the people carrier? (yes/no)")
+                    if car_type ==<sp
