@@ -1,0 +1,40 @@
+
+5. postgrey sql dml command  : ---
+
+ CREATE
+CREATE SCHEMA Schema_Name; 
+Example:
+
+
+CREATE SCHEMA teachers;
+ ALTER
+Syntax:
+
+ALTER TABLE table_name
+ADD column_name datatype;
+Example:
+
+1
+2
+ALTER TABLE TeachersInfo
+ADD DateOfBirth date;
+ DROP 
+Syntax:
+
+DROP SCHEMA schema_name;
+Example:
+
+1
+DROP SCHEMA teachers;
+ TRUNCATE
+Syntax:
+
+TRUNCATE TABLE table_name;
+Example:
+
+1
+TRUNCATE TABLE TeachersInfo;
+  RENAME 
+ALTER TABLE table_name RENAME TO new_table_name;  --Rename Table name
+ALTER TABLE table_name RENAME COLUMN column_name TO new_column_name; -- Rename Column name
+**************
